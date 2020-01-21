@@ -5,10 +5,10 @@ import java.sql.SQLException;
 
 public class Reimbursement {
   private int id;
-  private String fullName;
+  private String employeeName;
   private double amount;
   private String reason;
-  private String imageURL;
+  private String imageUrl;
   private String managerName;
   private int metaData; //0 - Null, 1 - Approved, 2 - Denied.
 
@@ -20,12 +20,12 @@ public class Reimbursement {
         rs.getString("reason"), null, rs.getString("manager"), rs.getInt("approved"));
   }
 
-  public Reimbursement(int i, String fN, double a, String r, String iU, String mN, int m) {
+  public Reimbursement(int i, String eN, double a, String r, String iU, String mN, int m) {
     id = i;
-    fullName = fN;
+    employeeName = eN;
     amount = a;
     reason = r;
-    imageURL = iU;
+    imageUrl = iU;
     managerName = mN;
     metaData = m;
   }
@@ -34,8 +34,8 @@ public class Reimbursement {
   
   @Override
   public String toString() {
-    return "Reimbursement [id=" + id + ", fullName=" + fullName + ", amount=" + amount + ", reason="
-        + reason + ", imageURL=" + imageURL + ", managerName=" + managerName + ", metaData="
+    return "Reimbursement [id=" + id + ", employeeName=" + employeeName + ", amount=" + amount + ", reason="
+        + reason + ", imageURL=" + imageUrl + ", managerName=" + managerName + ", metaData="
         + metaData + "]";
   }
   
@@ -48,12 +48,12 @@ public class Reimbursement {
     this.id = id;
   }
 
-  public String getFullName() {
-    return fullName;
+  public String getEmployeeName() {
+    return employeeName;
   }
 
-  public void setFullName(String fullName) {
-    this.fullName = fullName;
+  public void setEmployeeName(String employeeName) {
+    this.employeeName = employeeName;
   }
 
   public double getAmount() {
@@ -72,12 +72,12 @@ public class Reimbursement {
     this.reason = reason;
   }
 
-  public String getImageURL() {
-    return imageURL;
+  public String getImageUrl() {
+    return imageUrl;
   }
 
-  public void setImageURL(String imageURL) {
-    this.imageURL = imageURL;
+  public void setImageUrl(String imageUrl) {
+    this.imageUrl = imageUrl;
   }
 
   public String getManagerName() {

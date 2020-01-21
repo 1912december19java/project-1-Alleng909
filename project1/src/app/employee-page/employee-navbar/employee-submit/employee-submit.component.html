@@ -1,0 +1,10 @@
+<h5>Submit a reimbursement</h5>
+<form>
+    <label>Reimbursement Amount:</label>
+    <input type="number" [(ngModel)]="reimbursement.amount" name="amount">
+    <label>Reimbursement Reason:</label>
+    <input type="text" [(ngModel)]="reimbursement.reason" name="reason">
+    <label>Reimbursement image URL</label>
+    <input type="text" [(ngModel)]="reimbursement.imageUrl" name="imageUrl"> 
+</form>
+<button class="btn btn-primary" (click)="submit()">Submit!</button>

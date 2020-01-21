@@ -1,0 +1,14 @@
+<h1>Employee Login</h1>
+<form>
+    <select [(ngModel)]="employeeOption" name="employeeName">
+        <option *ngFor="let employee of employees" value={{employee}}>{{employee}}</option>
+    </select>
+    <button routerLink="employee-logout" class="btn btn-info" (click)="employeeSubmit()">Log in!</button>
+</form>
+<h1>Manager Login</h1>
+<form>
+    <select [(ngModel)]="managerOption" name="managerName">
+        <option *ngFor="let manager of managers" value={{manager}}>{{manager}}</option>
+    </select>
+    <button routerLink="manager-logout" class="btn btn-info" (click)="managerSubmit()">Log in!</button>
+</form>

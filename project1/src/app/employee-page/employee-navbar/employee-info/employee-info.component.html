@@ -1,0 +1,10 @@
+<div>
+    <p>
+        Email: {{email}}
+    </p>
+</div>
+<h5>Change your Email:</h5>
+<form>
+    <input type="string" [(ngModel)]="email" name="email">
+</form>
+<button class="btn btn-danger" (click)="change()">Change!</button>

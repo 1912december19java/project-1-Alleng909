@@ -79,10 +79,11 @@ public class Project1DaoPostgres implements Project1Dao {
   @Override
   public void addReimbursement(Reimbursement r) {
     try {
-      PreparedStatement ps = conn.prepareStatement("INSERT INTO reimbursements (amount, reason, employee) VALUES (?,?)");
+      PreparedStatement ps = conn.prepareStatement("INSERT INTO reimbursements (amount, reason, employee, imageurl) VALUES (?,?,?,?)");
       ps.setDouble(1, r.getAmount());
       ps.setString(2, r.getReason());
-      ps.setString(3, r.getFullName());
+      ps.setString(3, r.getEmployeeName());
+      ps.setString(4, r.getImageUrl());
       ps.execute(); // Run code.
     } catch (SQLException e) {
       e.printStackTrace();
@@ -139,7 +140,24 @@ public class Project1DaoPostgres implements Project1Dao {
     return list;
 
   }
-
+  
+  @Override
+  public List<Reimbursement> getReimbursements(int metadata) {
+    List<Reimbursement> list = new ArrayList<Reimbursement>();
+    try {
+      PreparedStatement ps = conn.prepareStatement("SELECT * FROM reimbursements WHERE approved = ?");
+      ps.setInt(1, metadata);
+      ps.execute(); // Run code.
+      ResultSet rs = ps.getResultSet(); // Get results.
+      while(rs.next()) { 
+        list.add(new Reimbursement(rs));
+      }
+    } catch (SQLException e) {
+      e.printStackTrace();
+    }
+    return list;
+  }
+  
   @Override
   public List<Reimbursement> getReimbursements(String fullName, int metadata) {
     List<Reimbursement> list = new ArrayList<Reimbursement>();
@@ -156,6 +174,7 @@ public class Project1DaoPostgres implements Project1Dao {
       e.printStackTrace();
     }
     return list;
-
   }
+  
+  
 }

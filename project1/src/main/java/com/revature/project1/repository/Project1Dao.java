@@ -28,6 +28,9 @@ public interface Project1Dao {
   //Gets list of reimbursements from a specific employee.
   List<Reimbursement> getReimbursements(String fullName);
   
-  //Gets list of reimbursements that are either true (Confirmed) or false (Pending).
+  //Get list of reimbursements with specific metadata.
+  List<Reimbursement> getReimbursements(int metadata);
+  
+  //Gets list of reimbursements of specific employee with specific metadata.
   List<Reimbursement> getReimbursements(String fullName, int metadata);
 }

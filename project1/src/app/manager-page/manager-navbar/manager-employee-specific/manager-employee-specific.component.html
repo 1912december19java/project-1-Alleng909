@@ -1,0 +1,15 @@
+<h5>View Specific Employee Info</h5>
+<form>
+    <select [(ngModel)]="selectedEmployee" name="selected">
+        <option *ngFor="let employee of employees" value={{employee}}>{{employee}}</option>
+    </select>
+    <button class="btn btn-info" (click)="employeeSelect()">Get Reimbursements</button>
+</form>
+<div>
+    Pending reimbursements
+    {{pendingReimbursements | json}}
+</div>
+<div>
+    Resloved reimbursements
+    {{resolvedReimbursements | json}}
+</div>

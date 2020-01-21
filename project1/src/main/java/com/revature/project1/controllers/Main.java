@@ -17,8 +17,10 @@ public class Main {
       e.printStackTrace();
     }
     Project1Dao dao = new Project1DaoPostgres(conn);
-    List<Reimbursement> list = dao.getReimbursements("Dill Pickle", 1);
+    List<Reimbursement> list = dao.getReimbursements(2);
     System.out.println(dao.getAllEmployees());
     System.out.println(list);
+    dao.setEmployeeEmail("Allen Guo", "test@email.com");
+    dao.addReimbursement(new Reimbursement(0, "Corey Alex", 420, "High end stuff", "", "", 0));
   }
 }
