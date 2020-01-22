@@ -1,10 +1,19 @@
 <h5>Submit a reimbursement</h5>
 <form>
-    <label>Reimbursement Amount:</label>
-    <input type="number" [(ngModel)]="reimbursement.amount" name="amount">
-    <label>Reimbursement Reason:</label>
-    <input type="text" [(ngModel)]="reimbursement.reason" name="reason">
-    <label>Reimbursement image URL</label>
-    <input type="text" [(ngModel)]="reimbursement.imageUrl" name="imageUrl"> 
+    <div class="form-group">
+        <label>Reimbursement Amount:</label>
+        <input type="number" [(ngModel)]="reimbursement.amount" name="amount">
+    </div>
+    <div class="form-group">
+        <label>Reimbursement Reason:</label>
+        <input type="text" [(ngModel)]="reimbursement.reason" name="reason">
+    </div>
+    <div class="form-group">
+        <label>Reimbursement image URL</label>
+        <input type="text" [(ngModel)]="reimbursement.imageUrl" name="imageUrl"> 
+    </div>
 </form>
+<p>
+    Upload your image <a href="https://imgur.com/" target="_blank">HERE</a> and put the resulting url into the form.
+</p>
 <button class="btn btn-primary" (click)="submit()">Submit!</button>

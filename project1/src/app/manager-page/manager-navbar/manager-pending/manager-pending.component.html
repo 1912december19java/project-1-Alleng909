@@ -1,2 +1,17 @@
-<p>manager-pending works!</p>
-{{reimbursements | json}}
+<h5 class="text-center">Pending Reimbursements</h5>
+<app-reimbursement-table [reimbursements]="reimbursements"></app-reimbursement-table>
+<div class="container">
+    <h5 class="text-center">Review Reimbursements</h5>
+    <form>
+        <div class="row">
+            Id:
+            <select [(ngModel)]="selectedId" name="selectedId">
+                <option *ngFor="let reimbursement of reimbursements" value={{reimbursement.id}}>{{reimbursement.id}}</option>
+            </select>
+        </div>
+        <div class="row">
+            <button class="btn btn-primary" (click)="approve()">Approve</button>
+            <button class="btn btn-danger" (click)="deny()">Deny</button>
+        </div>
+    </form>
+</div>

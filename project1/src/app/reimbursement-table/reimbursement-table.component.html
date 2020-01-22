@@ -1,0 +1,17 @@
+<div class="container" *ngIf="reimbursements.length > 0">
+    <div class="row bg-primary font-weight-bold">
+        <div class="col-md-1">ID</div>
+        <div class="col-md-2">Employee Name</div>
+        <div class="col-md-2">Amount</div>
+        <div class="col-md-2">Reason</div>
+        <div class="col-md-1">Image</div>
+        <div class="col-md-2">Manager</div>
+        <div class="col-md-2">Approval</div>
+    </div>
+    <app-reimbursement-display *ngFor="let reimbursement of reimbursements" [reimbursement]="reimbursement"></app-reimbursement-display>
+</div>
+<div class="container" *ngIf="1 > reimbursements.length">
+    <div class="row bg-primary font-weight-bold">
+        No reimbursements to display.
+    </div>
+</div>

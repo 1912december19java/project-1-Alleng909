@@ -93,13 +93,9 @@ public class Project1DaoPostgres implements Project1Dao {
   @Override
   public void updateReimbursement(Reimbursement r) {
     try {
-      boolean approved = false;
-      if (r.getId() == 1) {
-        approved = true;
-      }
       PreparedStatement ps = conn.prepareStatement("UPDATE reimbursements SET manager = ?, approved = ? WHERE id = ?");
       ps.setString(1, r.getManagerName());
-      ps.setBoolean(2, approved);
+      ps.setInt(2, r.getMetaData());
       ps.setInt(3, r.getId());
       ps.execute(); // Run code.
     } catch (SQLException e) {

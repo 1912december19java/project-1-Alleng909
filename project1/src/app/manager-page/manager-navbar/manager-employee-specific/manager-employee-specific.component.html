@@ -6,10 +6,10 @@
     <button class="btn btn-info" (click)="employeeSelect()">Get Reimbursements</button>
 </form>
 <div>
-    Pending reimbursements
-    {{pendingReimbursements | json}}
+    <h3 class="text-center">Pending reimbursements</h3>
+    <app-reimbursement-table [reimbursements]="pendingReimbursements"></app-reimbursement-table>
 </div>
 <div>
-    Resloved reimbursements
-    {{resolvedReimbursements | json}}
+    <h3 class="text-center">Resolved reimbursements</h3>
+    <app-reimbursement-table [reimbursements]="resolvedReimbursements"></app-reimbursement-table>
 </div>

@@ -1,6 +1,8 @@
 <app-header></app-header>
-<app-welcome-page  *ngIf="log.manager === null && log.employee === null"></app-welcome-page>
-<app-employee-page *ngIf="log.employee"></app-employee-page>
-<app-manager-page *ngIf="log.manager"></app-manager-page>
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<div>
+    <app-welcome-page  *ngIf="log.manager === null && log.employee === null"></app-welcome-page>
+    <app-employee-page *ngIf="log.employee"></app-employee-page>
+    <app-manager-page *ngIf="log.manager"></app-manager-page>
+    <router-outlet></router-outlet>
+</div>
+<!-- <app-footer></app-footer> -->

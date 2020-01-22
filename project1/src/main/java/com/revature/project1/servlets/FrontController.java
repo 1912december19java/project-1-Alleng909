@@ -102,13 +102,6 @@ public class FrontController extends HttpServlet {
     } else {
       resp.getWriter().write("Hello");
     }
-    /*
-     * List<Reimbursement> list = null; String employee = req.getParameter("employee"); if (employee
-     * == null) { list = dao.getAllReimbursements(); System.out.println("employee was null"); } else
-     * { System.out.println(employee); resp.getWriter().write(employee);
-     * 
-     * } resp.getWriter().write(om.writeValueAsString(list));
-     */
   }
 
   @Override

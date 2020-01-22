@@ -22,6 +22,8 @@ import { ManagerResolvedComponent } from './manager-page/manager-navbar/manager-
 import { ManagerEmployeeSpecificComponent } from './manager-page/manager-navbar/manager-employee-specific/manager-employee-specific.component';
 import { ManagerEmployeeListComponent } from './manager-page/manager-navbar/manager-employee-list/manager-employee-list.component';
 import { ManagerLogoutComponent } from './manager-page/manager-navbar/manager-logout/manager-logout.component';
+import { ReimbursementTableComponent } from './reimbursement-table/reimbursement-table.component';
+import { ReimbursementDisplayComponent } from './reimbursement-table/reimbursement-display/reimbursement-display.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { ManagerLogoutComponent } from './manager-page/manager-navbar/manager-lo
     ManagerResolvedComponent,
     ManagerEmployeeSpecificComponent,
     ManagerEmployeeListComponent,
-    ManagerLogoutComponent
+    ManagerLogoutComponent,
+    ReimbursementTableComponent,
+    ReimbursementDisplayComponent
   ],
   imports: [
     BrowserModule,

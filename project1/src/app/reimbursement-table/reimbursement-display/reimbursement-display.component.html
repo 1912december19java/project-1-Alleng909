@@ -1,0 +1,14 @@
+<div class="row bg-info">
+    <div class="col-md-1">{{reimbursement.id}}</div>
+    <div class="col-md-2">{{reimbursement.employeeName}}</div>
+    <div class="col-md-2">${{reimbursement.amount}}</div>
+    <div class="col-md-2">{{reimbursement.reason}}</div>
+    <div class="col-md-1">
+        <p *ngIf="reimbursement.imageUrl == false">
+            None
+        </p>
+        <a *ngIf="reimbursement.imageUrl" href={{reimbursement.imageUrl}} target="_blank">Link</a>
+    </div>
+    <div class="col-md-2">{{reimbursement.managerName}}</div>
+    <div class="col-md-2">{{approval}}</div>
+</div>

@@ -14,10 +14,9 @@ public class Reimbursement {
 
   public Reimbursement() {}
   
-  //IMAGE URL / BYTEA blob not implemented currently.
   public Reimbursement(ResultSet rs) throws SQLException {
     this(rs.getInt("id"), rs.getString("employee"), rs.getDouble("amount"), 
-        rs.getString("reason"), null, rs.getString("manager"), rs.getInt("approved"));
+        rs.getString("reason"), rs.getString("imageurl"), rs.getString("manager"), rs.getInt("approved"));
   }
 
   public Reimbursement(int i, String eN, double a, String r, String iU, String mN, int m) {
